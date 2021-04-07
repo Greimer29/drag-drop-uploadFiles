@@ -19,29 +19,52 @@
 }
 
 .container .container-card form {
-    display: inline-block;
     padding: 5px;
     text-align: center;
 }
 
-.container .container-card form .file {
+.drop-zone {
+    max-width: 180px;
     height: 200px;
-    width: 180px;
-    border: 1px solid red;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    color: #cccccccc;
+    border: 3px dashed #009578;
 }
 
-.container .container-card form .file .file-upload {
-    height: 180px;
+.drop-zone--over {
+    border-style: solid;
+}
+
+.drop-zone__thumb {
     width: 100%;
-    background: rgb(255, 230, 230);
-    border: 1px solid red;
-}
-
-input[type="file"] {
-    position: absolute;
-    visibility: hidden;
     height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    position: relative;
+}
+
+.drop-zone__thumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    padding: 2px;
+    background: rgba(0, 0, 0);
+    text-align: center;
+}
+
+.drop-zone__input {
+    display: none
 }
 
 input[type="text"] {
@@ -53,6 +76,7 @@ input[type="text"] {
 }
 
 button {
+    margin-top: 5px;
     padding: 8px;
     border-radius: 5px;
     cursor: pointer;
