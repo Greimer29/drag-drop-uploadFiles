@@ -14,11 +14,14 @@
         <div class="container-card">
             <form action="/#">
                 <input type="text" name="name" placeholder="Nombre Guia">
-                <div class="file">
-                    <div class="file-upload">
-                        <input type="file"><span>Seleccione o arrastre un archivo</span>
+                <div class="drop-zone">
+                    <!-- <span>Seleccione o arrastre un archivo</span> -->
+
+                    <div class="drop-zone__thumb" data-label="myFile.txt">
+
                     </div>
-                    <span>Extension del archivo</span>
+
+                    <input type="file" name="myFile" class="drop-zone__input">
                 </div>
                 <input type="text" name="decription" placeholder="Descripción"><br>
                 <button>Subir Guia</button>
