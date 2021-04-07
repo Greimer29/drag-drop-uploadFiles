@@ -1,0 +1,62 @@
+* {
+    padding: 0;
+    margin: 0 auto;
+}
+
+.container {
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+    max-width: 400px;
+    max-height: 700px;
+    padding: 5px;
+    border-radius: 20px;
+    border: 5px double rgb(0, 0, 0);
+}
+
+.container-card {
+    padding: 5px;
+}
+
+.container .container-card form {
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+}
+
+.container .container-card form .file {
+    height: 200px;
+    width: 180px;
+    border: 1px solid red;
+}
+
+.container .container-card form .file .file-upload {
+    height: 180px;
+    width: 100%;
+    background: rgb(255, 230, 230);
+    border: 1px solid red;
+}
+
+input[type="file"] {
+    position: absolute;
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+input[type="text"] {
+    margin: 3px;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid grey
+}
+
+button {
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: red;
+    color: white;
+    border: none;
+}
