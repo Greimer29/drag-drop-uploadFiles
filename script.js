@@ -1,3 +1,5 @@
-document.getElementById('drop-zone').addEventListener('click', (e) => {
-    console.log(`aja puto`);
-});
+input = document.querySelectorAll('.drop-zone__input').forEach(inputElement => {
+    const dropZoneElement = inputElement.closest('.drop-zone');
+
+
+})
