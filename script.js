@@ -11,4 +11,16 @@ input = document.querySelectorAll('.drop-zone__input').forEach(inputElement => {
             });
         });
     });
+
+    dropZoneElement.addEventListener('drop', e => {
+        e.preventDefault();
+
+        // console.log(e.dataTransfer.files)
+
+        if (e.dataTransfer.files.length) {
+            inputElement.files = e.dataTransfer.files;
+        }
+        dropZoneElement.classList.remove('drop-zone--over')
+        console.log(inputElement.files);
+    })
 });
