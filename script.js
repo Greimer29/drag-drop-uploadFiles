@@ -25,6 +25,10 @@ input = document.querySelectorAll('.drop-zone__input').forEach(inputElement => {
     })
 });
 
+/**Update thubnail Element
+ * @param {HTMLElement} dropZoneElement
+ * @param {File} file
+ */
 function updateThumbnail(dropZoneElement, file) {
     let thumbnailElement = document.querySelector('.drop-zone__thumb');
 
@@ -40,4 +44,17 @@ function updateThumbnail(dropZoneElement, file) {
         dropZoneElement.querySelector('.drop-zone__prompt').remove();
     }
     thumbnailElement.dataset.label = file.name;
+
+    //show thumbnail for image files
+    if (file.type.startsWith("image/")) {
+        const reader = new FileReader();
+
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            thumbnailElement.style.backgroundImage = `URL('${reader.result}')`;
+        }
+    } else {
+        thumbnailElement.style.backgroundImage = null;
+    }
+    console.log(file)
 }
