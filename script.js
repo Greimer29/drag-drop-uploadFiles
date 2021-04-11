@@ -26,6 +26,18 @@ input = document.querySelectorAll('.drop-zone__input').forEach(inputElement => {
 });
 
 function updateThumbnail(dropZoneElement, file) {
-    console.log(dropZoneElement);
-    console.log(file);
+    let thumbnailElement = document.querySelector('.drop-zone__thumb');
+
+    //firts time theres not element, so lets create
+    if (!thumbnailElement) {
+        thumbnailElement = document.createElement('div');
+        thumbnailElement.classList.add('drop-zone__thumb')
+        dropZoneElement.appendChild(thumbnailElement);
+    }
+
+    //firts time remove the promt
+    if (dropZoneElement.querySelector('.drop-zone__prompt')) {
+        dropZoneElement.querySelector('.drop-zone__prompt').remove();
+    }
+    thumbnailElement.dataset.label = file.name;
 }
