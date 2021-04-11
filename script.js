@@ -19,8 +19,13 @@ input = document.querySelectorAll('.drop-zone__input').forEach(inputElement => {
 
         if (e.dataTransfer.files.length) {
             inputElement.files = e.dataTransfer.files;
+            updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
         }
-        dropZoneElement.classList.remove('drop-zone--over')
-        console.log(inputElement.files);
+        dropZoneElement.classList.remove('drop-zone--over');
     })
 });
+
+function updateThumbnail(dropZoneElement, file) {
+    console.log(dropZoneElement);
+    console.log(file);
+}
